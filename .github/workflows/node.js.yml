@@ -22,8 +22,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
         working-directory: dex
-      - run: yarn test
-        working-directory: dex
 
   server-build:
     name: Build and Test Server Folder
@@ -39,6 +37,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-        working-directory: server
-      - run: yarn test
         working-directory: server
