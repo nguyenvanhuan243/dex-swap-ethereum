@@ -21,9 +21,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-      - run: cd dex && yarn install
-      - run: cd dex && yarn build # Replace with your actual build command if different
-      - run: cd dex && yarn test  # Replace with your actual test command if different
+      - run: yarn install
+        working-directory: dex
+      - run: yarn build
+        working-directory: dex
+      - run: yarn test
+        working-directory: dex
 
   server-build:
     name: Build and Test Server Folder
@@ -39,6 +42,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-      - run: cd server && yarn install
-      - run: cd server && yarn build # Replace with your actual build command if different
-      - run: cd server && yarn test  # Replace with your actual test command if different
+      - run: yarn install
+        working-directory: server
+      - run: yarn build
+        working-directory: server
+      - run: yarn test
+        working-directory: server
